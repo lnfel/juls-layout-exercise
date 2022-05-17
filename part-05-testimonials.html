@@ -7,17 +7,8 @@
 	<!-- Import Tailwind from CDN -->
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
-	<style>
-		.hero {
-			background-image: url('img/ocean.jpg');
-			background-size: cover;
-		}
-
-		li > a {
-			text-decoration: underline;
-		}
-	</style>
+	<script src="https://unpkg.com/shiki"></script>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body class="relative">
 	<div class="container mx-auto py-2">
@@ -69,5 +60,59 @@
 
 	</main>
 	<!-- End of Main -->
+
+	<div class="container mx-auto pt-24">
+		<h2 class="text-xl text-gray-800">Code snippet</h2>
+		<pre>
+			<code id="code">
+&lt;main&gt;
+
+	&lt;!-- Testimonials --&gt;
+	&lt;section class=&quot;bg-gray-100 py-24&quot;&gt;
+
+		&lt;h2 class=&quot;text-2xl font-bold text-center mb-12&quot;&gt;What people are saying...&lt;/h2&gt;
+
+		&lt;div class=&quot;flex flex-col md:flex-row items-center justify-evenly space-y-8 md:space-y-0&quot;&gt;
+			&lt;div class=&quot;flex flex-col items-center text-center w-52 space-y-2&quot;&gt;
+				&lt;img src=&quot;img/user-01-thumb.jpg&quot; class=&quot;rounded-full shadow-md overflow-hidden&quot;&gt;
+
+				&lt;h3 class=&quot;text-xl font-bold&quot;&gt;Margaret E.&lt;/h3&gt;
+				&lt;p&gt;This is fantastic! Thank you so much guys!&lt;/p&gt;
+			&lt;/div&gt;
+
+			&lt;div class=&quot;flex flex-col items-center text-center w-52 space-y-2&quot;&gt;
+				&lt;img src=&quot;img/user-02-thumb.jpg&quot; class=&quot;rounded-full shadow-md overflow-hidden&quot;&gt;
+
+				&lt;h3 class=&quot;text-xl font-bold&quot;&gt;Fred S.&lt;/h3&gt;
+				&lt;p&gt;Bootstrap is amazing. I've been using it to create lots of super nice landing pages!&lt;/p&gt;
+			&lt;/div&gt;
+
+			&lt;div class=&quot;flex flex-col items-center text-center w-52 space-y-2&quot;&gt;
+				&lt;img src=&quot;img/user-03-thumb.jpg&quot; class=&quot;rounded-full shadow-md overflow-hidden&quot;&gt;
+
+				&lt;h3 class=&quot;text-xl font-bold&quot;&gt;Winston H.&lt;/h3&gt;
+				&lt;p&gt;Thank you so much for making these free resources available to us!&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/section&gt;
+	&lt;!-- End of Testimonials --&gt;
+
+&lt;/main&gt;
+			</code>
+		</pre>
+	</div>
+
+	<script>
+		shiki
+			.getHighlighter({
+				theme: 'material-palenight',
+				langs: ['html'],
+			})
+			.then(highlighter => {
+				let html = document.getElementById('code').innerText;
+				const code = highlighter.codeToHtml(html, { lang: 'html' })
+				document.getElementById('code').innerHTML = code
+			})
+	</script>
 </body>
 </html>

@@ -7,17 +7,8 @@
 	<!-- Import Tailwind from CDN -->
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
-	<style>
-		.hero {
-			background-image: url('img/ocean.jpg');
-			background-size: cover;
-		}
-
-		li > a {
-			text-decoration: underline;
-		}
-	</style>
+	<script src="https://unpkg.com/shiki"></script>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body class="relative">
 	<div class="container mx-auto py-2">
@@ -56,5 +47,47 @@
 		
 	</main>
 	<!-- End of Main -->
+
+	<div class="container mx-auto pt-24">
+		<h2 class="text-xl text-gray-800">Code snippet</h2>
+		<pre>
+			<code id="code">
+&lt;main&gt;
+	&lt;!-- Hero section --&gt;
+	&lt;section class=&quot;hero&quot;&gt;
+
+		&lt;div class=&quot;h-screen grid place-items-center bg-gray-800/50&quot;&gt;
+
+			&lt;div class=&quot;max-w-xl space-y-10 px-4&quot;&gt;
+				&lt;p class=&quot;text-4xl text-white text-center font-bold tracking-wide p-4&quot;&gt;
+					Generate more leads with a professional landing page!
+				&lt;/p&gt;
+
+				&lt;div class=&quot;flex items-center&quot;&gt;
+					&lt;input class=&quot;flex-1 p-3 rounded-l&quot; placeholder=&quot;Enter your email...&quot; type=&quot;text&quot;&gt;
+					&lt;button class=&quot;bg-blue-600 text-white font-bold rounded-r p-3&quot;&gt;Sign up!&lt;/button&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+	&lt;/section&gt;
+	&lt;!-- End of Hero section --&gt;
+&lt;/main&gt;
+			</code>
+		</pre>
+	</div>
+
+	<script>
+		shiki
+			.getHighlighter({
+				theme: 'material-palenight',
+				langs: ['html'],
+			})
+			.then(highlighter => {
+				let html = document.getElementById('code').innerText;
+				const code = highlighter.codeToHtml(html, { lang: 'html' })
+				document.getElementById('code').innerHTML = code
+			})
+	</script>
 </body>
 </html>

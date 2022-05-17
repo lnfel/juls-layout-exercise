@@ -7,17 +7,8 @@
 	<!-- Import Tailwind from CDN -->
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
-	<style>
-		.hero {
-			background-image: url('img/ocean.jpg');
-			background-size: cover;
-		}
-
-		li > a {
-			text-decoration: underline;
-		}
-	</style>
+	<script src="https://unpkg.com/shiki"></script>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body class="relative">
 	<div class="container mx-auto py-2">
@@ -71,5 +62,61 @@
 
 	</main>
 	<!-- End of Main -->
+
+	<div class="container mx-auto pt-24">
+		<h2 class="text-xl text-gray-800">Code snippet</h2>
+		<pre>
+			<code id="code">
+&lt;main&gt;
+
+	&lt;!-- Feature cards --&gt;
+	&lt;section class=&quot;flex flex-col md:flex-row items-center justify-evenly bg-gray-100 py-24 space-y-8 md:space-y-0&quot;&gt;
+
+		&lt;div class=&quot;flex flex-col items-center text-center w-52 space-y-2&quot;&gt;
+			&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;h-16 w-16 text-blue-600&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;&gt;
+				&lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z&quot; /&gt;
+			&lt;/svg&gt;
+
+			&lt;h2 class=&quot;text-xl font-bold&quot;&gt;Fully Responsive&lt;/h2&gt;
+			&lt;p&gt;This theme will look on any device, no matter the size!&lt;/p&gt;
+		&lt;/div&gt;
+
+		&lt;div class=&quot;flex flex-col items-center text-center w-52 space-y-2&quot;&gt;
+			&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;h-16 w-16 text-blue-600&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;&gt;
+				&lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z&quot; /&gt;
+			&lt;/svg&gt;
+
+			&lt;h2 class=&quot;text-xl font-bold&quot;&gt;Bootstrap 5 Ready&lt;/h2&gt;
+			&lt;p&gt;Featuring the latest build of the new Bootstrap Framework!&lt;/p&gt;
+		&lt;/div&gt;
+
+		&lt;div class=&quot;flex flex-col items-center text-center w-52 space-y-2&quot;&gt;
+			&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; class=&quot;h-16 w-16 text-blue-600&quot; fill=&quot;none&quot; viewBox=&quot;0 0 24 24&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;&gt;
+				&lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; d=&quot;M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4&quot; /&gt;
+			&lt;/svg&gt;
+
+			&lt;h2 class=&quot;text-xl font-bold&quot;&gt;Easy to Use&lt;/h2&gt;
+			&lt;p&gt;Ready to use with your own content, or customize the source files!&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/section&gt;
+	&lt;!-- End of Features --&gt;
+
+&lt;/main&gt;
+			</code>
+		</pre>
+	</div>
+
+	<script>
+		shiki
+			.getHighlighter({
+				theme: 'material-palenight',
+				langs: ['html'],
+			})
+			.then(highlighter => {
+				let html = document.getElementById('code').innerText;
+				const code = highlighter.codeToHtml(html, { lang: 'html' })
+				document.getElementById('code').innerHTML = code
+			})
+	</script>
 </body>
 </html>

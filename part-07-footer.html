@@ -7,17 +7,8 @@
 	<!-- Import Tailwind from CDN -->
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
-	<style>
-		.hero {
-			background-image: url('img/ocean.jpg');
-			background-size: cover;
-		}
-
-		li > a {
-			text-decoration: underline;
-		}
-	</style>
+	<script src="https://unpkg.com/shiki"></script>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body class="relative">
 	<div class="container mx-auto py-2">
@@ -58,5 +49,48 @@
 		</div>
 	</footer>
 	<!-- End of Footer -->
+
+	<div class="container mx-auto pt-24">
+		<h2 class="text-xl text-gray-800">Code snippet</h2>
+		<pre>
+			<code id="code">
+&lt;footer class=&quot;bg-gray-100 py-24&quot;&gt;
+	&lt;div class=&quot;container mx-auto flex flex-col md:flex-row items-center justify-between space-y-10 md:space-y-0&quot;&gt;
+		&lt;div&gt;
+			&lt;ul class=&quot;flex items-center justify-evenly space-x-2&quot;&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;text-blue-600&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&bull;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;text-blue-600&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&bull;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;text-blue-600&quot;&gt;Terms of Use&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&bull;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;text-blue-600&quot;&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+			&lt;span class=&quot;block w-full text-sm text-center md:text-left text-gray-800&quot;&gt;&amp;copy; Your Website 2022. All rights reserved.&lt;/span&gt;
+		&lt;/div&gt;
+
+		&lt;div class=&quot;flex items-center justify-evenly text-blue-600 space-x-4 text-2xl&quot;&gt;
+			&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;not-italic fa-brands fa-facebook-f fa-fw&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+			&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;not-italic fa-brands fa-twitter fa-fw&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+			&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;not-italic fa-brands fa-instagram fa-fw&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/footer&gt;
+			</code>
+		</pre>
+	</div>
+
+	<script>
+		shiki
+			.getHighlighter({
+				theme: 'material-palenight',
+				langs: ['html'],
+			})
+			.then(highlighter => {
+				let html = document.getElementById('code').innerText;
+				const code = highlighter.codeToHtml(html, { lang: 'html' })
+				document.getElementById('code').innerHTML = code
+			})
+	</script>
 </body>
 </html>

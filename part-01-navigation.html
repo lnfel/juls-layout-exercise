@@ -7,19 +7,10 @@
 	<!-- Import Tailwind from CDN -->
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
-	<style>
-		.hero {
-			background-image: url('img/ocean.jpg');
-			background-size: cover;
-		}
-
-		li > a {
-			text-decoration: underline;
-		}
-	</style>
+	<script src="https://unpkg.com/shiki"></script>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
-<body class="relative">
+<body class="">
 	<div class="container mx-auto py-2">
 		<h1 class="text-2xl p-2">Sample Layout Exercise</h1>
 		<ul class="flex flex-wrap">
@@ -50,5 +41,38 @@
 		</nav>
 		<!-- End of Navigation Bar -->
 	</div>
+
+	<div class="container mx-auto pt-24">
+		<h2 class="text-xl text-gray-800">Code snippet</h2>
+		<pre>
+			<code id="code">
+&lt;nav class=&quot;absolute inset-x-0 top-0 bg-white p-3 border-t border-gray-200&quot;&gt;
+
+	&lt;div class=&quot;container mx-auto flex items-center justify-between&quot;&gt;
+		&lt;div class=&quot;flex items-center&quot;&gt;
+			&lt;img src=&quot;img/blender.webp&quot; class=&quot;mr-3&quot; height=&quot;70&quot; width=&quot;70&quot;&gt;
+			&lt;h1 class=&quot;text-2xl font-bold&quot;&gt;Start Bootstrap&lt;/h1&gt;
+		&lt;/div&gt;
+
+		&lt;button class=&quot;bg-blue-600 text-white font-bold rounded p-3&quot;&gt;Sign Up&lt;/button&gt;
+	&lt;/div&gt;
+
+&lt;/nav&gt;
+			</code>
+		</pre>
+	</div>
+
+	<script>
+		shiki
+			.getHighlighter({
+				theme: 'material-palenight',
+				langs: ['html'],
+			})
+			.then(highlighter => {
+				let html = document.getElementById('code').innerText;
+				const code = highlighter.codeToHtml(html, { lang: 'html' })
+				document.getElementById('code').innerHTML = code
+			})
+	</script>
 </body>
 </html>

@@ -7,17 +7,8 @@
 	<!-- Import Tailwind from CDN -->
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
-	<style>
-		.hero {
-			background-image: url('img/ocean.jpg');
-			background-size: cover;
-		}
-
-		li > a {
-			text-decoration: underline;
-		}
-	</style>
+	<script src="https://unpkg.com/shiki"></script>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body class="relative">
 	<div class="container mx-auto py-2">
@@ -73,5 +64,63 @@
 
 	</main>
 	<!-- End of Main -->
+
+	<div class="container mx-auto pt-24">
+		<h2 class="text-xl text-gray-800">Code snippet</h2>
+		<pre>
+			<code id="code">
+&lt;main&gt;
+
+	&lt;!-- Features grid with images --&gt;
+	&lt;section class=&quot;grid grid-cols-1 md:grid-cols-2&quot;&gt;
+		&lt;!-- First set --&gt;
+		&lt;div class=&quot;flex flex-col justify-center px-16 py-24 space-y-2&quot;&gt;
+			&lt;h3 class=&quot;text-2xl font-bold&quot;&gt;Fully Responsive Design&lt;/h3&gt;
+			&lt;p&gt;When you use a theme created by Start Bootstrap, you know that the theme will look great on  any device, whether it's a phone, tablet, or desktop the page will behave responsively!&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div&gt;
+			&lt;img src=&quot;img/iphone-14.jpg&quot; class=&quot;object-cover&quot;&gt;
+		&lt;/div&gt;
+		&lt;!-- End of First set --&gt;
+
+		&lt;!-- Second set --&gt;
+		&lt;div&gt;
+			&lt;img src=&quot;img/code.jpg&quot; class=&quot;object-cover&quot;&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;flex flex-col justify-center px-16 py-24 space-y-2&quot;&gt;
+			&lt;h3 class=&quot;text-2xl font-bold&quot;&gt;Updated For Bootstrap 5&lt;/h3&gt;
+			&lt;p&gt;Newly improved, and full of great utility classes, Bootstrap 5 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 5!&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;!-- End of Second set --&gt;
+
+		&lt;!-- Third set --&gt;
+		&lt;div class=&quot;flex flex-col justify-center px-16 py-24 space-y-2&quot;&gt;
+			&lt;h3 class=&quot;text-2xl font-bold&quot;&gt;Easy to Use &amp; Customize&lt;/h3&gt;
+			&lt;p&gt;Landing page is just HTML and CSS with splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing pagewill be ready to go!&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div&gt;
+			&lt;img src=&quot;img/laptop.jpg&quot; class=&quot;object-cover&quot;&gt;
+		&lt;/div&gt;
+		&lt;!-- End of Third set --&gt;
+	&lt;/section&gt;
+	&lt;!-- End of Features grid --&gt;
+
+&lt;/main&gt;
+			</code>
+		</pre>
+	</div>
+
+	<script>
+		shiki
+			.getHighlighter({
+				theme: 'material-palenight',
+				langs: ['html'],
+			})
+			.then(highlighter => {
+				let html = document.getElementById('code').innerText;
+				const code = highlighter.codeToHtml(html, { lang: 'html' })
+				document.getElementById('code').innerHTML = code
+			})
+	</script>
 </body>
 </html>

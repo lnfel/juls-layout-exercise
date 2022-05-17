@@ -1,0 +1,19 @@
+.hero {
+	background-image: url('../img/ocean.jpg');
+	background-size: cover;
+}
+
+li > a {
+	text-decoration: underline;
+}
+
+/* 
+ * This is for code highlighting 
+ * Please ignore...
+ */
+.shiki {
+	border-radius: .25rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	white-space: pre-wrap;
+}
