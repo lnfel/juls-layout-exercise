@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Layout Sample</title>
+
+	<!-- Import Tailwind from CDN -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+	<style>
+		.hero {
+			background-image: url('img/ocean.jpg');
+			background-size: cover;
+		}
+
+		li > a {
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body class="relative">
+	<div class="container mx-auto py-2">
+		<h1 class="text-2xl p-2">Sample Layout Exercise</h1>
+		<ul class="flex flex-wrap">
+			<li><a href="index.html" class="p-2">Full Page</a></li>
+			<li><a href="part-01-navigation.html" class="p-2">Navigation</a></li>
+			<li><a href="part-02-hero.html" class="p-2">Hero Section</a></li>
+			<li><a href="part-03-feature-cards.html" class="p-2">Feature Cards</a></li>
+			<li><a href="part-04-grid-section.html" class="p-2">Grid Section</a></li>
+			<li><a href="part-05-testimonials.html" class="p-2">Testimonials</a></li>
+			<li><a href="part-06-call-to-action.html" class="p-2">Call to Action</a></li>
+			<li><a href="part-07-footer.html" class="p-2">Footer</a></li>
+		</ul>
+	</div>
+
+	<!-- Main will contain all the sections for the page -->
+	<main>
+		<!-- Hero section -->
+		<section class="hero">
+
+			<div class="h-screen grid place-items-center bg-gray-800/50">
+
+				<div class="max-w-xl space-y-10 px-4">
+					<p class="text-4xl text-white text-center font-bold tracking-wide p-4">Generate more leads with a professional landing page!</p>
+
+					<div class="flex items-center">
+						<input class="flex-1 p-3 rounded-l" placeholder="Enter your email..." type="text">
+						<button class="bg-blue-600 text-white font-bold rounded-r p-3">Sign up!</button>
+					</div>
+				</div>
+			</div>
+
+		</section>
+		<!-- End of Hero section -->
+		
+	</main>
+	<!-- End of Main -->
+</body>
+</html>
