@@ -1,0 +1,62 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.hero{
+    background-image: url('../img/ocean.jpg');
+    background-size: cover;
+}
+.tint{
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: grid;
+    place-items: center;
+}
+.hero-text{
+    color: white;
+    font-size: 2.5rem;
+    max-width: 30ch;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.hero-form{
+    display: flex;
+    padding: 1rem;
+}
+.hero-input,
+.hero-button,
+.nav-button{
+    padding: 1rem;
+    border: 0px;
+}
+.hero-button,
+.nav-button{
+    background-color: rgb(37 99 235 / 1);
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: 900;
+}
+.hero-input{
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    flex-grow: 1;
+}
+.nav-flex{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    left: 0px;
+    right: 0px;
+    padding: 1rem;
+}
+.nav-logo{
+    display:flex;
+    align-items: center ;
+}
+.navigation{
+    position: relative;
+}
+
