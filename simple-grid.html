@@ -33,10 +33,6 @@
 		<!-- Features grid with images -->
 		<section class="grid grid-cols-1 md:grid-cols-2">
 			<!-- First set -->
-			<div class="flex flex-col justify-center px-16 py-24 space-y-2">
-				<h3 class="text-2xl font-bold">Fully Responsive Design</h3>
-				<p>When you use a theme created by Start Bootstrap, you know that the theme will look great on  any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
-			</div>
 			<div>
 				<img src="img/iphone-14.jpg" class="h-full object-cover">
 			</div>
@@ -46,17 +42,9 @@
 			<div>
 				<img src="img/code.jpg" class="h-full object-cover">
 			</div>
-			<div class="flex flex-col justify-center px-16 py-24 space-y-2">
-				<h3 class="text-2xl font-bold">Updated For Bootstrap 5</h3>
-				<p>Newly improved, and full of great utility classes, Bootstrap 5 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 5!</p>
-			</div>
 			<!-- End of Second set -->
 
 			<!-- Third set -->
-			<div class="flex flex-col justify-center px-16 py-24 space-y-2">
-				<h3 class="text-2xl font-bold">Easy to Use & Customize</h3>
-				<p>Landing page is just HTML and CSS with splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing pagewill be ready to go!</p>
-			</div>
 			<div>
 				<img src="img/laptop.jpg" class="h-full object-cover">
 			</div>
@@ -67,19 +55,16 @@
 	</main>
 	<!-- End of Main -->
 
-	<div class="container mx-auto pt-24 px-4">
+	<div class="container mx-auto py-24 px-4 space-y-4">
 		<h2 class="text-xl text-gray-800">Code snippet</h2>
-		<pre>
-			<code id="code">
+
+        <h2 class="text-xl text-gray-800">HTML</h2>
+		<pre><code id="html">
 &lt;main&gt;
 
 	&lt;!-- Features grid with images --&gt;
 	&lt;section class=&quot;grid grid-cols-1 md:grid-cols-2&quot;&gt;
 		&lt;!-- First set --&gt;
-		&lt;div class=&quot;flex flex-col justify-center px-16 py-24 space-y-2&quot;&gt;
-			&lt;h3 class=&quot;text-2xl font-bold&quot;&gt;Fully Responsive Design&lt;/h3&gt;
-			&lt;p&gt;When you use a theme created by Start Bootstrap, you know that the theme will look great on  any device, whether it's a phone, tablet, or desktop the page will behave responsively!&lt;/p&gt;
-		&lt;/div&gt;
 		&lt;div&gt;
 			&lt;img src=&quot;img/iphone-14.jpg&quot; class=&quot;h-full object-cover&quot;&gt;
 		&lt;/div&gt;
@@ -89,17 +74,9 @@
 		&lt;div&gt;
 			&lt;img src=&quot;img/code.jpg&quot; class=&quot;h-full object-cover&quot;&gt;
 		&lt;/div&gt;
-		&lt;div class=&quot;flex flex-col justify-center px-16 py-24 space-y-2&quot;&gt;
-			&lt;h3 class=&quot;text-2xl font-bold&quot;&gt;Updated For Bootstrap 5&lt;/h3&gt;
-			&lt;p&gt;Newly improved, and full of great utility classes, Bootstrap 5 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 5!&lt;/p&gt;
-		&lt;/div&gt;
 		&lt;!-- End of Second set --&gt;
 
 		&lt;!-- Third set --&gt;
-		&lt;div class=&quot;flex flex-col justify-center px-16 py-24 space-y-2&quot;&gt;
-			&lt;h3 class=&quot;text-2xl font-bold&quot;&gt;Easy to Use &amp; Customize&lt;/h3&gt;
-			&lt;p&gt;Landing page is just HTML and CSS with splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing pagewill be ready to go!&lt;/p&gt;
-		&lt;/div&gt;
 		&lt;div&gt;
 			&lt;img src=&quot;img/laptop.jpg&quot; class=&quot;h-full object-cover&quot;&gt;
 		&lt;/div&gt;
@@ -108,20 +85,56 @@
 	&lt;!-- End of Features grid --&gt;
 
 &lt;/main&gt;
-			</code>
-		</pre>
+			</code></pre>
+
+        <h2 class="text-xl text-gray-800">CSS</h2>
+        <pre><code id="css">
+.grid {
+    display: grid;
+}
+
+/* Adding this class will set our grid to have exactly 1 column */
+.grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+/* 
+ * On larger screens we want our grid to accomodate 2 columns of images.
+ * We then use `@media` to specify the minimum breakpoint where we want to start
+ * displaying 2 columns. In this case if the viewport is at least at 768px wide.
+ */
+@media (min-width: 768px) {
+    .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Adding this on an element will make its height expand up to the height of its container */
+.h-full {
+    height: 100%;
+}
+
+/* Resize an element’s content to cover its container using, perfect for responsive images */
+.object-cover {
+    object-fit: cover;
+}
+        </code></pre>
 	</div>
 
 	<script>
 		shiki
 			.getHighlighter({
 				theme: 'material-palenight',
-				langs: ['html'],
+				langs: ['html', 'css'],
 			})
 			.then(highlighter => {
-				let html = document.getElementById('code').innerText;
-				const code = highlighter.codeToHtml(html, { lang: 'html' })
-				document.getElementById('code').innerHTML = code
+				const html = document.getElementById('html').innerText;
+				const htmlCode = highlighter.codeToHtml(html, { lang: 'html' })
+				document.getElementById('html').innerHTML = htmlCode
+
+                const css = document.getElementById('css').innerText;
+                const cssCode = highlighter.codeToHtml(css, { lang: 'css' })
+                document.getElementById('css').innerHTML = cssCode
 			})
 	</script>
 </body>
