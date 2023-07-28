@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 768 752" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="アートボード1" transform="matrix(0.913601,0,0,0.853703,-578.622,-335.657)">
+        <rect x="633.343" y="393.178" width="840.297" height="880.603" style="fill:none;"/>
+        <clipPath id="_clip1">
+            <rect x="633.343" y="393.178" width="840.297" height="880.603"/>
+        </clipPath>
+        <g clip-path="url(#_clip1)">
+            <g transform="matrix(1.09457,0,0,1.17137,-107.717,-15.0447)">
+                <path d="M1039.67,967.044L1010.82,775.61L685.491,726.578L1010.82,677.546L1059.85,352.217L1108.88,677.546L1434.21,726.578L1108.88,775.61L1080.14,966.327C1225.25,957.093 1346,877.236 1379.07,780.224C1379.07,928.605 1240.15,1052.16 1066.24,1058.55L1059.85,1100.94L1053.5,1058.81C1053.01,1058.81 1052.54,1058.81 1052.07,1058.81C871.6,1058.81 725.077,932.613 725.077,780.224C759.329,880.704 887.641,962.78 1039.67,967.044Z" style="fill:rgb(244,210,77);"/>
+            </g>
+        </g>
+    </g>
+</svg>

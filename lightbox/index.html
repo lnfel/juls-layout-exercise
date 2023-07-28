@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lightbox - Juls layout exercise</title>
+
+    <!-- Import Tailwind from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/lightbox.js" defer></script>
+</head>
+
+<body class="dark:bg-gray-900">
+    <!-- Flowbite Sticky Navbar Start -->
+    <!-- https://flowbite.com/docs/components/navbar/#sticky-navbar -->
+    <nav class="bg-white dark:bg-gray-900 sticky w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="https://flowbite.com/" class="flex items-center">
+                <!-- <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Flowbite Logo"> -->
+                <img src="img/earth-federation-forces.svg" class="h-8 mr-3" alt="Flowbite Logo">
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                    <div class="hidden md:block">Earth Federation Forces</div>
+                    <div class="md:hidden">E.F.F.</div>
+                </span>
+            </a>
+            <div class="flex items-center gap-8">
+                <div class="flex md:order-2">
+                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Enlist today
+                    </button>
+                    <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                    <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                        <li>
+                            <a href="#" class="block py-2 pl-3 pr-4 text-blue-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                The army
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Daily life
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Flowbite Sticky Navbar End -->
+
+    <main>
+        <!-- Flowbite Breadcrumb Start -->
+        <!-- https://flowbite.com/docs/typography/headings/#breadcrumb-context -->
+        <nav class="flex max-w-[80ch] mx-auto p-4 pt-8" aria-label="Breadcrumb">
+            <ol class="inline-flex flex-wrap items-center md:space-x-3">
+                <li class="flex items-center pr-2 md:pr-0">
+                    <a href="#" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                        <svg class="w-3 h-3 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+                        </svg>
+                        <span class="ml-1">Earth Federation Forces</span>
+                    </a>
+                </li>
+                <li class="pr-2 md:pr-0">
+                    <div class="flex items-center">
+                        <svg class="w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                        <a href="#" class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">
+                            The Army
+                        </a>
+                    </div>
+                </li>
+                <li aria-current="page" class="pr-2 md:pr-0">
+                    <div class="flex items-center">
+                        <svg class="w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">
+                            Earth Federation Ground Force (E.F.G.F.)
+                        </span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+        <!-- Flowbite Breadcrumb End -->
+
+        <!-- Section Article Start -->
+        <section class="max-w-[80ch] mx-auto px-4">
+            <h2 class="pt-6 pb-10 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl dark:text-white">
+                Earth Federation Ground Force (E.F.G.F.)
+            </h2>
+
+            <div class="space-y-4 pb-4">
+                <div class="grid grid-cols-1 gap-10 sm:grid-cols-2">
+                    <figure class="max-w-lg place-self-center">
+                        <img class="h-auto max-w-full rounded-lg" src="img/Earth_Federation_base.png.x-bmp.bmp" alt="Two EFGF soldiers, and a trio of RGM-79 GM Ground Types.">
+                        <figcaption class="mt-2 text-sm text-center text-gray-500 dark:text-gray-400">Two EFGF soldiers, and a trio of RGM-79 GM Ground Types.</figcaption>
+                    </figure>
+                    <p class="mb-3 text-gray-500 dark:text-gray-400 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:mr-3 first-letter:float-left">Also known as the Earth Federation Army (E.F. Army). Prior to the One Year War, the command of the Earth Federation Ground Force was highly centralized. All important decisions, such as staff management and supplies distribution, were all managed by the general headquarters at Jaburo. However, when Zeon invaded Earth, their use of Minovsky Particles rendered the Federation's communication lines unusable, causing many units to be isolated and destroyed.</p>
+                </div>
+                <p class="text-gray-500 dark:text-gray-400">With Minovsky Particles restricting combat to within visual range, the EFGF's main battle tank, the Type 61 Tank quickly proved unable to match Zeon's mobile suits, with its advanced data link system and electronics rendered ineffective.[4] As the development of mobile suits was difficult in the short term, the EFGF developed a stop-gap measure: the M-101A3 Regina, an Anti-Mobile Suit Missile (AMSM) designed to be carried and used by specialist squads known as Anti-MS Squads.[5] Though their casualty rates were high, they were able to buy valuable time for friendly units to retreat and regroup.</p>
+                <p class="text-gray-500 dark:text-gray-400">As Zeon controlled territory continued to expand, the Earth Federation Forces began development of the RX-79［G］ Gundam Ground Type, with the EFGF leading the development.[7] The Gundam Ground Type was constructed in very limited numbers and deployed to regions close to Zeon territory in order to check their aggression.[8] Later, the RGM-79［G］ GM Ground Type, a simplified version of the Gundam Ground Type, was also developed.[9] In July, U.C. 0079, the Earth Federation Forces Far Eastern Army created the 1st Mechanized Composite Battalion (commonly known as "Kojima Batallion"), its first mobile suit-equipped battalion.</p>
+                <p class="text-gray-500 dark:text-gray-400">Having decided that a specialized vehicle would be necessary to support its mobile suits, the EFGF developed the M353A4 Bloodhound, a hover vehicle equipped with an underground sonar, capable of detecting nearby enemies based on the sound they make. The Kojima Battalion received priority deployment of these vehicles, with each MS Team receiving one vehicle.</p>
+                <p class="text-gray-500 dark:text-gray-400">The EFGF also made use of large land battleships, such as the Big Tray-class, which served as mobile command centers for commanding officers, and the Heavy Fork-class, which was designed to provide fire support.[11] Many of these land battleships participated in Operation Odessa.</p>
+            </div>
+
+            <h2 class="pt-6 pb-10 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl dark:text-white">
+                Earth Federation Navy
+            </h2>
+
+            <div class="space-y-4 pb-4">
+                <div class="grid grid-cols-1 gap-10 sm:grid-cols-2">
+                    <p class="order-2 md:order-1 mb-3 text-gray-500 dark:text-gray-400 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:mr-3 first-letter:float-left">Even before the outbreak of the One Year War, the EFF's naval forces were extremely weak and mostly consisted of obsolete ships, most of which were destroyed by Operation British. It received yet another major blow when Zeon forces captured California Base early in the One Year War.[12] A major naval base with submarine production capabilities, California Base housed dozens of submarines in working condition. Due to Zeon's swift attack, Federation forces were not able to destroy them in time, and all of them were captured, allowing Zeon to form its own submarine fleets.</p>
+                    <figure class="md:order-2 max-w-lg place-self-center">
+                        <img class="h-auto max-w-full rounded-lg" src="img/EA_Naval_Fleet_01_SEED_HD_Ep38.webp" alt="Two EFGF soldiers, and a trio of RGM-79 GM Ground Types.">
+                        <figcaption class="mt-2 text-sm text-center text-gray-500 dark:text-gray-400">Two EFGF soldiers, and a trio of RGM-79 GM Ground Types.</figcaption>
+                    </figure>
+                </div>
+                <p class="text-gray-500 dark:text-gray-400">Since the EFF prioritized the production of spaceships, the navy was slow to replenish its strength. Due to the persistent threat of Zeon submarine fleets, its main focus was anti-submarine warfare, with Himalaya-class anti-sub light aircraft carriers and Don Escargot anti-sub attack craft continuously in production. However, their numbers were too few, and Zeon retained command of the sea for most of the war.</p>
+                <p class="text-gray-500 dark:text-gray-400">In order to counter Zeon's aquatic mobile suits, the Federation developed the RAG-79 Aqua GM. During the One Year War, its performance proved inferior to its Zeon counterparts. However, it would continue to be used long after the end of the war, since the low priority of aquatic mobile suits precluded the development of any successor unit.[14] Following the war, the Federation developed another aquatic mobile suit, the RMS-192M Zaku Mariner, based on the captured MS-06M Zaku Marine Type. However, during the First Neo Zeon War, it was captured and used by Neo Zeon instead.</p>
+                <p class="text-gray-500 dark:text-gray-400">After the end of the One Year War, the Federation Navy was rebuilt. Realizing that it would cease to exist if it no longer has any enemies to fight, it began ignoring any Zeon remnants still operating in the ocean around the time of the Gryps Conflict, and even secretly provided funds to them to ensure their continued existence.</p>
+                <p class="text-gray-500 dark:text-gray-400">The Federation would not develop any further aquatic mobile suit until the F90M Gundam F90 Marine Type, which rolled out in U.C. 0111.[16] Even though its performance was considered excellent, it was never refined into a mass-production version, since the Earth Federation government did not believe that conflicts would ever erupt on Earth again.</p>
+            </div>
+        </section>
+        <!-- Section Article End -->
+    </main>
+
+    <!-- Flowbite Footer Start -->
+    <!-- https://flowbite.com/docs/components/footer/#footer-with-logo -->
+    <footer class="bg-white rounded-lg shadow dark:bg-gray-900 m-4">
+        <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0">
+                    <img src="img/earth-federation-forces.svg" class="h-8 mr-3" alt="Flowbite Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                        Earth Federation Forces
+                    </span>
+                </a>
+                <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                    <li>
+                        <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
+                    </li>
+                    <li>
+                        <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="#" class="mr-4 hover:underline md:mr-6 ">Licensing</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:underline">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+            <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" class="hover:underline">Earth Federation Forces™</a>. All Rights Reserved.</span>
+        </div>
+    </footer>
+    <!-- Flowbite Footer End -->
+</body>
+
+</html>
