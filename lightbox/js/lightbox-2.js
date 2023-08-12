@@ -114,6 +114,7 @@ function handleImgClick(event) {
 
     const imgClone = target.cloneNode()
     imgClone.addEventListener('click', handleImgClick, { capture: true })
+    imgClone.addEventListener('transitionend', handleImgTransitionend, { capture: true })
     imgClone.classList.add('cursor-pointer')
     const figcaptionClone = figcaption.cloneNode(true)
 
@@ -141,6 +142,15 @@ function handleImgClick(event) {
     target.removeEventListener('click', handleImgClick, { capture: true })
 }
 
+/**
+ * @param {TransitionEvent & { target: HTMLImageElement }} event
+ */
+function handleImgTransitionend({ target }) {
+    target.classList.remove('animate')
+    lightbox.classList.remove('lightbox-fade-out')
+    lightbox.classList.add('lightbox-fade-in')
+}
+
 function attachImgClickListeners(figures) {
     if (!figures) figures = document.querySelectorAll('figure.article-image');
 
@@ -157,9 +167,7 @@ function attachImgClickListeners(figures) {
 
             img.addEventListener('click', handleImgClick, { capture: true })
             img.classList.add('cursor-pointer')
-            img.addEventListener("transitionend", /** @param {TransitionEvent & { target: HTMLImageElement }} */ ({ target }) => {
-                target.classList.remove('animate')
-            })
+            img.addEventListener("transitionend",  handleImgTransitionend, { capture: true })
         }
     )
 }
@@ -188,9 +196,7 @@ function openLightbox(src, caption, key) {
     // lightbox.querySelector('img').src = src
     // lightbox.querySelector('figcaption').textContent = caption
     lightbox.dataset.current = key
-    lightbox.classList.remove('lightbox-fade-out')
-    lightbox.classList.add('lightbox-fade-in')
-    lightbox.style.display = 'block'
+    lightbox.classList.remove('hidden')
     disableScroll()
 }
 
