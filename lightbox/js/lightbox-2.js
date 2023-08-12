@@ -200,12 +200,32 @@ function openLightbox(src, caption, key) {
     disableScroll()
 }
 
+/**
+ * @param {TransitionEvent & { target: HTMLElement }} event `
+ */
+function clearLightboxFigureChildren(event) {
+    setTimeout(() => {
+        event.target.replaceChildren()
+        document.querySelector('.lightbox').classList.add('hidden')
+        document.querySelector('.lightbox').classList.remove('lightbox-fade-out')
+        event.target.removeEventListener('animationend', clearLightboxFigureChildren, { capture: true })
+    }, 250)
+}
+
 function closeLightbox() {
+    const lightboxFigure = lightbox.querySelector('figure')
+    lightboxFigure.addEventListener('animationend', clearLightboxFigureChildren, { capture: true })
     lightbox.classList.remove('lightbox-fade-in')
     lightbox.classList.add('lightbox-fade-out')
-    const lightboxFigure = lightbox.querySelector('figure')
-    lightboxFigure.replaceChildren()
-    setTimeout(() => document.querySelector('.lightbox').style.display = 'none', 250)
+    
+    // setTimeout(() => {
+    //     const lightboxFigure = lightbox.querySelector('figure')
+    //     lightboxFigure.replaceChildren()
+    //     document.querySelector('.lightbox').classList.add('hidden')
+    //     document.querySelector('.lightbox').classList.remove('lightbox-fade-out')
+    //     lightboxFigure.addEventListener('transitionend', clearLightboxFigureChildren, { capture: true })
+    // }, 250)
+    
     enableScroll()
 }
 
