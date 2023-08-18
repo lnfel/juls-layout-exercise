@@ -1,0 +1,60 @@
+.animate {
+    transition: all 250ms ease;
+}
+.lightbox-fade-in {
+    background-color: transparent;
+    backdrop-filter: blur(0px);
+    animation: lighboxFadeIn 250ms ease forwards;
+}
+.lightbox.lightbox-fade-in button {
+    opacity: 0;
+    animation: fadeIn 250ms ease forwards;
+}
+.lightbox-fade-out {
+    animation: lighboxFadeOut 250ms ease forwards;
+}
+.lightbox.lightbox-fade-out button,
+.lightbox.lightbox-fade-out figure {
+    opacity: 1;
+    animation: fadeOut 250ms ease forwards;
+}
+
+@keyframes lighboxFadeIn {
+    0% {
+        background-color: transparent;
+        backdrop-filter: blur(0px);
+    }
+    100% {
+        background-color: rgb(17 24 39 / 0.9);
+        backdrop-filter: blur(4px);
+    }
+}
+
+@keyframes lighboxFadeOut {
+    0% {
+        background-color: rgb(17 24 39 / 0.9);
+        backdrop-filter: blur(4px);
+    }
+    100% {
+        background-color: transparent;
+        backdrop-filter: blur(0px);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
